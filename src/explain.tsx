@@ -63,7 +63,6 @@ export default function Command() {
             detail={<List.Item.Detail markdown={detailMarkdown(data?.command ?? command, tokens, token, tokenColor)} />}
             actions={
               <ActionPanel>
-                <Action.OpenInBrowser url={explainUrl(data?.command ?? command)} />
                 {token.help && (
                   <Action.CopyToClipboard
                     title="Copy Help Text"
@@ -71,6 +70,7 @@ export default function Command() {
                     shortcut={Keyboard.Shortcut.Common.Copy}
                   />
                 )}
+                <Action.OpenInBrowser url={explainUrl(data?.command ?? command)} />
               </ActionPanel>
             }
           />
